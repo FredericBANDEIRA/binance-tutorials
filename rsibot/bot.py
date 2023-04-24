@@ -3,23 +3,23 @@ import config
 from binance.client import Client
 from binance.enums import *
 
-SOCKET = "wss://stream.binance.com:9443/ws/ethusdt@kline_1m"
+SOCKET = "wss://stream.binance.com:9443/ws/btcusdt@kline_1m"
 
 RSI_PERIOD = 14
 RSI_OVERBOUGHT = 70
 RSI_OVERSOLD = 30
-TRADE_SYMBOL = 'ETHUSD'
-TRADE_QUANTITY = 0.05
+TRADE_SYMBOL = 'BTCUSDT'
+TRADE_QUANTITY = 0.001
 
 closes = []
 in_position = False
 
-client = Client(config.API_KEY, config.API_SECRET, tld='us')
+client = Client(config.API_KEY, config.API_SECRET, testnet=True)
 
 def order(side, quantity, symbol,order_type=ORDER_TYPE_MARKET):
     try:
         print("sending order")
-        order = client.create_order(symbol=symbol, side=side, type=order_type, quantity=quantity)
+        order = client.futures_create_order(symbol=symbol, side=side, type=order_type, quantity=quantity)
         print(order)
     except Exception as e:
         print("an exception occured - {}".format(e))

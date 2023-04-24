@@ -1,4 +1,5 @@
 # binance-tutorials
+
 Real-Time Candlestick Charts and Crypto Trading Bot using Binance API and Websockets
 
 This source code is explained and demonstrated in my YouTube channel:
@@ -12,3 +13,6 @@ https://www.youtube.com/watch?v=rvhnz1yBHgQ
 If you are only interested in the RSI bot:
 
 https://youtu.be/GdlFhF6gjKo
+
+To install TA-Lib:
+https://blog.quantinsti.com/install-ta-lib-python/
